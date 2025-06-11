@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Darth Memory Game</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="game-container">
+    <h1 class="title">Darth Memory</h1>
+
+    <!-- Settings Panel -->
+    <div class="settings">
+      <label for="pairCount">Card Pairs:</label>
+      <select id="pairCount">
+        <option value="10">5 Pairs (10 cards)</option>
+      </select>
+      <button id="startBtn">Start Game</button>
+    </div>
+
+    <!-- Game Grid -->
+    <div class="card-grid" id="cardGrid">
+      <!-- Cards will be inserted here via JS -->
+    </div>
+  </div>
+
+  <!-- Your JS script -->
+  <script src="index.js"></script>
+</body>
+</html>
