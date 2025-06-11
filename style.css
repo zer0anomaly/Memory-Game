@@ -1,0 +1,126 @@
+/* Reset & base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #0d0d0d;
+  color: #e0e0e0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.game-container {
+  text-align: center;
+  padding: 20px;
+}
+
+/* Title */
+.title {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #ff0040;
+  text-shadow: 0 0 10px #ff0040;
+}
+
+/* Settings Panel */
+.settings {
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.settings label {
+  font-size: 1rem;
+  color: #aaa;
+}
+
+.settings select,
+.settings button {
+  background-color: #1a1a1a;
+  color: #fff;
+  border: 2px solid #333;
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: all 0.2s ease;
+}
+
+.settings select:focus,
+.settings button:hover {
+  border-color: #ff0040;
+  box-shadow: 0 0 10px #ff0040;
+  outline: none;
+}
+
+/* Grid */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 15px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Card styling */
+.card {
+  perspective: 1000px;
+  cursor: pointer;
+}
+
+.card-inner {
+  position: relative;
+  width: 100%;
+  padding-top: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.6s ease;
+}
+
+.card.flipped .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+  position: absolute;
+  inset: 0;
+  border-radius: 12px;
+  backface-visibility: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+}
+
+/* Front - hidden side */
+.card-front {
+  background: linear-gradient(145deg, #1a1a1a, #0f0f0f);
+  border: 2px solid #222;
+  box-shadow: inset 0 0 10px #000;
+}
+
+/* Back - revealed content */
+.card-back {
+  background: linear-gradient(145deg, #ff0040, #66001f);
+  color: #fff;
+  transform: rotateY(180deg);
+  box-shadow: 0 0 10px #ff0040;
+}
+.card-back img {
+  width: 80%;
+  height: 80%;
+  object-fit: contain;
+}
+.card.matched {
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.8s ease;
+}
+
